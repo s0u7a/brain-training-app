@@ -1,0 +1,63 @@
+# Brain Training Site Implementation Plan
+
+## Goal Description
+Build a "Brain Training" web application using Node.js. The application will feature a **Dual N-Back** game, a scientifically supported method for improving working memory.
+The stack will be **Node.js (Express)** for the backend and **React (Vite)** for the frontend, using **Bun** as the package manager and runtime where applicable.
+
+## User Review Required
+> [!NOTE]
+> Switching to **Dual N-Back** as requested. This game requires handling both visual (grid position) and auditory (spoken letters) stimuli simultaneously.
+> Using **Bun** for dependency management and script execution.
+
+## Proposed Changes
+
+### Project Structure
+- Initialize a new Node.js project.
+- Install dependencies: `express`, `vite`, `react`, `react-dom`, `@vitejs/plugin-react` using `bun`.
+
+### Backend (`/`)
+#### [MODIFY] [server.js](file:///home/s0u7a/.gemini/antigravity/brain/ab8bcd2f-736b-47cb-a431-0d8062baabd3/server.js)
+- Ensure compatibility with Bun (mostly standard Node.js API).
+
+### Frontend (`/`)
+#### [NEW] [index.html](file:///home/s0u7a/.gemini/antigravity/brain/ab8bcd2f-736b-47cb-a431-0d8062baabd3/index.html)
+- Entry point for Vite.
+
+#### [NEW] [vite.config.js](file:///home/s0u7a/.gemini/antigravity/brain/ab8bcd2f-736b-47cb-a431-0d8062baabd3/vite.config.js)
+- Vite configuration for React.
+
+#### [NEW] [src/main.jsx](file:///home/s0u7a/.gemini/antigravity/brain/ab8bcd2f-736b-47cb-a431-0d8062baabd3/src/main.jsx)
+- React entry point.
+
+#### [NEW] [src/App.jsx](file:///home/s0u7a/.gemini/antigravity/brain/ab8bcd2f-736b-47cb-a431-0d8062baabd3/src/App.jsx)
+- Main application component.
+
+#### [NEW] [src/components/DualNBackGame.jsx](file:///home/s0u7a/.gemini/antigravity/brain/ab8bcd2f-736b-47cb-a431-0d8062baabd3/src/components/DualNBackGame.jsx)
+- **Logic**:
+    - Generate a sequence of positions (3x3 grid) and sounds (letters).
+    - Track "N" value (starts at 1 or 2, adjustable).
+    - Check user input against history (N steps back).
+    - Scoring system.
+- **UI**:
+    - 3x3 Grid.
+    - Controls for "Position Match" and "Sound Match".
+    - Visual feedback for correct/incorrect.
+
+#### [NEW] [src/hooks/useDualNBack.js](file:///home/s0u7a/.gemini/antigravity/brain/ab8bcd2f-736b-47cb-a431-0d8062baabd3/src/hooks/useDualNBack.js)
+- Custom hook to manage the game state and logic (separation of concerns).
+
+#### [NEW] [src/index.css](file:///home/s0u7a/.gemini/antigravity/brain/ab8bcd2f-736b-47cb-a431-0d8062baabd3/src/index.css)
+- Global styles, premium aesthetic.
+
+## Verification Plan
+
+### Automated Tests
+- None planned for this initial prototype.
+
+### Manual Verification
+- **Installation**: Verify `bun install` works.
+- **Game Mechanics**:
+    - **Visual**: Verify the square appears in the correct grid position.
+    - **Audio**: Verify the letter sound plays (using Web Speech API or pre-recorded assets).
+    - **Matching**: Verify that pressing "Match" correctly identifies if the current stimulus matches the one N steps ago.
+    - **Progression**: Verify N increases/decreases based on performance (optional for v1, but good to have).

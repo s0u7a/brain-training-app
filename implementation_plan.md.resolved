@@ -1,0 +1,37 @@
+# Cloudflare Pages Deployment Plan
+
+## Goal Description
+Deploy the Brain Training app to **Cloudflare Pages**.
+To ensure the backend (TTS Proxy) works on Cloudflare Pages, we must migrate the Express.js backend to **Cloudflare Pages Functions**.
+We will then set up **GitHub Actions** for automatic deployment.
+
+## User Review Required
+> [!IMPORTANT]
+> **Backend Migration**: The current [server.js](file:///home/s0u7a/.gemini/antigravity/brain/ab8bcd2f-736b-47cb-a431-0d8062baabd3/server.js) (Express) cannot run directly on Cloudflare Pages. I will replace it with a `functions/api/tts.js` file that runs on Cloudflare's edge network.
+> **Secrets**: You will need to provide your **Cloudflare Account ID** and **API Token** to your GitHub Repository Secrets for the automatic deployment to work.
+
+## Proposed Changes
+
+### Backend Migration (Cloudflare Functions)
+#### [NEW] [functions/api/tts.js](file:///home/s0u7a/.gemini/antigravity/brain/ab8bcd2f-736b-47cb-a431-0d8062baabd3/functions/api/tts.js)
+- Re-implement the TTS proxy using the standard `fetch` API (compatible with Cloudflare Workers).
+
+#### [DELETE] [server.js](file:///home/s0u7a/.gemini/antigravity/brain/ab8bcd2f-736b-47cb-a431-0d8062baabd3/server.js)
+- No longer needed for production (Cloudflare Pages handles static serving + functions).
+- We can keep a simplified version for local dev if needed, or switch to `wrangler pages dev`.
+
+### Deployment Configuration
+#### [NEW] [.github/workflows/deploy.yml](file:///home/s0u7a/.gemini/antigravity/brain/ab8bcd2f-736b-47cb-a431-0d8062baabd3/.github/workflows/deploy.yml)
+- GitHub Actions workflow to build and deploy to Cloudflare Pages.
+
+#### [MODIFY] [package.json](file:///home/s0u7a/.gemini/antigravity/brain/ab8bcd2f-736b-47cb-a431-0d8062baabd3/package.json)
+- Add `wrangler` as a dev dependency.
+- Update scripts to use `wrangler pages dev` for local development (unifying frontend + backend dev).
+
+## Verification Plan
+### Automated Tests
+- None.
+
+### Manual Verification
+- **Local Dev**: Run `bun run dev:pages` (new script) to verify the app and TTS work locally with Wrangler.
+- **Deployment**: Push to GitHub and verify the Action succeeds.

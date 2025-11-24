@@ -1,0 +1,56 @@
+# Brain Training Site Implementation Plan
+
+## Goal Description
+Build a "Brain Training" web application using Node.js. The application will feature a "Memory Match" game to start, designed with a premium, modern aesthetic.
+The stack will be **Node.js (Express)** for the backend and **React (Vite)** for the frontend.
+
+## User Review Required
+> [!NOTE]
+> I am proposing **React + Vite** for the frontend to ensure a responsive and interactive gaming experience, and **Vanilla CSS** for styling to maintain full control over the "premium" aesthetic as per system guidelines.
+> The backend will be **Express.js** to serve the application and handle potential future API needs (like high scores).
+
+## Proposed Changes
+
+### Project Structure
+- Initialize a new Node.js project.
+- Install dependencies: `express`, `vite`, `react`, `react-dom`, `@vitejs/plugin-react`.
+
+### Backend (`/`)
+#### [NEW] [server.js](file:///home/s0u7a/.gemini/antigravity/brain/ab8bcd2f-736b-47cb-a431-0d8062baabd3/server.js)
+- Express server setup.
+- Serve static files from `dist` (production build).
+- API endpoint example (e.g., `/api/status`).
+
+### Frontend (`/`)
+#### [NEW] [index.html](file:///home/s0u7a/.gemini/antigravity/brain/ab8bcd2f-736b-47cb-a431-0d8062baabd3/index.html)
+- Entry point for Vite.
+
+#### [NEW] [vite.config.js](file:///home/s0u7a/.gemini/antigravity/brain/ab8bcd2f-736b-47cb-a431-0d8062baabd3/vite.config.js)
+- Vite configuration for React.
+
+#### [NEW] [src/main.jsx](file:///home/s0u7a/.gemini/antigravity/brain/ab8bcd2f-736b-47cb-a431-0d8062baabd3/src/main.jsx)
+- React entry point.
+
+#### [NEW] [src/App.jsx](file:///home/s0u7a/.gemini/antigravity/brain/ab8bcd2f-736b-47cb-a431-0d8062baabd3/src/App.jsx)
+- Main application component.
+- Routing (if needed) or simple view switching.
+
+#### [NEW] [src/components/MemoryGame.jsx](file:///home/s0u7a/.gemini/antigravity/brain/ab8bcd2f-736b-47cb-a431-0d8062baabd3/src/components/MemoryGame.jsx)
+- Logic and UI for the Memory Match game.
+
+#### [NEW] [src/index.css](file:///home/s0u7a/.gemini/antigravity/brain/ab8bcd2f-736b-47cb-a431-0d8062baabd3/src/index.css)
+- Global styles, CSS variables for theming (Dark mode, premium colors).
+
+## Verification Plan
+
+### Automated Tests
+- None planned for this initial prototype.
+
+### Manual Verification
+- **Frontend Development**: Run `npm run dev` and verify the game loads and is playable in the browser.
+- **Backend Serving**: Run `npm run build` and `npm start` (or `node server.js`) to verify the Express server correctly serves the built assets.
+- **Game Mechanics**:
+    - Click cards to flip.
+    - Verify matching pairs stay visible.
+    - Verify non-matching pairs flip back.
+    - Verify "Game Over" / "Win" state.

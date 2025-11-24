@@ -1,0 +1,46 @@
+# Brain Training App - Walkthrough
+
+I have built a **Dual N-Back** brain training application using **Node.js**, **React (Vite)**, and **Bun**.
+
+## Features
+- **Dual N-Back Game**: A scientifically supported memory training task.
+- **Premium Aesthetic**: Dark mode design with modern colors and fonts.
+- **Responsive UI**: Works on desktop and mobile (responsive grid).
+- **Audio Feedback**: Uses the Web Speech API for letter sounds.
+
+## How to Run
+
+1.  **Install Dependencies** (if not already done):
+    ```bash
+    bun install
+    ```
+
+2.  **Start the Development Server**:
+    ```bash
+    bun run dev
+    ```
+    Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+3.  **Build for Production**:
+    ```bash
+    bun run build
+    bun start
+    ```
+    Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## How to Play
+1.  Click **Start Game**.
+2.  A square will appear in the grid, and a letter will be spoken.
+3.  **Position Match**: If the square is in the same position as it was **N** steps ago, press **A** or click "Position Match".
+4.  **Sound Match**: If the letter is the same as it was **N** steps ago, press **L** or click "Sound Match".
+5.  **N-Level**: You can adjust the N-level (1-Back, 2-Back, etc.) on the start screen.
+
+## Verification
+- **Visuals**: Check if the grid highlights correctly.
+- **Audio**: Ensure your volume is up to hear the letters.
+- **Scoring**: Verify that correct matches increase your score and mistakes decrease it.
+
+## Next Steps
+- Add more game modes.
+- Implement persistent high scores (Database integration).
+- Add user accounts.
