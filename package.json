@@ -1,0 +1,33 @@
+{
+    "name": "brain-training-app",
+    "version": "1.0.0",
+    "description": "A brain training application built with Node.js and React",
+    "main": "server.js",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "start": "node server.js",
+        "pages:dev": "wrangler pages dev -- bun run dev"
+    },
+    "keywords": [
+        "brain-training",
+        "react",
+        "nodejs",
+        "game"
+    ],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.18.2",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@types/react": "^18.2.43",
+        "@types/react-dom": "^18.2.17",
+        "@vitejs/plugin-react": "^4.2.1",
+        "vite": "^5.0.8",
+        "wrangler": "^3.19.0"
+    }
+}

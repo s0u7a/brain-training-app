@@ -1,0 +1,30 @@
+# Brain Training Site - Task List
+
+- [/] Project Initialization & Planning <!-- id: 0 -->
+    - [x] Check current directory state <!-- id: 1 -->
+    - [x] Create implementation plan <!-- id: 2 -->
+    - [x] Initialize Node.js project (package.json) <!-- id: 3 -->
+    - [x] Install dependencies (Express, Vite, React, etc.) using Bun <!-- id: 4 -->
+- [ ] Backend Setup <!-- id: 5 -->
+    - [ ] Create Express server entry point <!-- id: 6 -->
+    - [ ] Setup API routes (placeholder for scores) <!-- id: 7 -->
+- [x] Frontend Setup (Vite + React) <!-- id: 8 -->
+    - [x] Initialize Vite project <!-- id: 9 -->
+    - [x] Setup TailwindCSS (if requested/approved) or Vanilla CSS (as per instructions) <!-- id: 10 -->
+    - [x] Create basic layout and navigation <!-- id: 11 -->
+- [x] Game Implementation <!-- id: 12 -->
+    - [x] Design Game 1: Dual N-Back <!-- id: 13 -->
+    - [x] Implement Game 1 Logic (N-Back algorithm) <!-- id: 14 -->
+    - [x] Implement Game 1 UI (Grid + Audio) <!-- id: 15 -->
+- [x] Verification & Polish <!-- id: 16 -->
+    - [x] Verify game mechanics (Manual Verification Required) <!-- id: 17 -->
+    - [x] Polish UI/UX (Animations, Colors) <!-- id: 18 -->
+    - [x] Create Walkthrough <!-- id: 19 -->
+- [x] Fix Audio <!-- id: 20 -->
+    - [x] Implement Google TTS Proxy in Backend <!-- id: 21 -->
+    - [x] Update Frontend to use TTS Proxy <!-- id: 22 -->
+- [/] Cloudflare Pages Deployment <!-- id: 23 -->
+    - [/] Migrate Backend to Cloudflare Functions <!-- id: 24 -->
+    - [ ] Configure Wrangler and package.json <!-- id: 25 -->
+    - [ ] Setup GitHub Actions Workflow <!-- id: 26 -->
+    - [ ] Verify Local Wrangler Dev <!-- id: 27 -->

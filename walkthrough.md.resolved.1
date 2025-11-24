@@ -1,0 +1,44 @@
+# Brain Training App - Walkthrough
+
+I have built a **Dual N-Back** brain training application using **Node.js**, **React (Vite)**, and **Bun**.
+
+## Features
+- **Dual N-Back Game**: A scientifically supported memory training task.
+- **Premium Aesthetic**: Dark mode design with modern colors and fonts.
+- **Responsive UI**: Works on desktop and mobile (responsive grid).
+- **Audio Feedback**: Uses Google TTS via a backend proxy.
+
+## How to Run (Important for Audio)
+
+To play the game with working audio, you need to run **both** the backend server (for TTS) and the frontend (for the UI).
+
+1.  **Install Dependencies**:
+    ```bash
+    bun install
+    ```
+
+2.  **Start the Backend Server** (Terminal 1):
+    ```bash
+    bun start
+    ```
+    This runs on `http://localhost:3000`.
+
+3.  **Start the Frontend Development Server** (Terminal 2):
+    ```bash
+    bun run dev
+    ```
+    Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+    *Note: The frontend is configured to proxy `/api` requests to the backend at localhost:3000.*
+
+## How to Play
+1.  Click **Start Game**.
+2.  A square will appear in the grid, and a letter will be spoken.
+3.  **Position Match**: If the square is in the same position as it was **N** steps ago, press **A** or click "Position Match".
+4.  **Sound Match**: If the letter is the same as it was **N** steps ago, press **L** or click "Sound Match".
+5.  **N-Level**: You can adjust the N-level (1-Back, 2-Back, etc.) on the start screen.
+
+## Verification
+- **Visuals**: Check if the grid highlights correctly.
+- **Audio**: Ensure your volume is up. The app fetches audio from Google Translate's TTS.
+- **Scoring**: Verify that correct matches increase your score and mistakes decrease it.
