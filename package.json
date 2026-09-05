@@ -16,8 +16,8 @@
         "nodejs",
         "game"
     ],
-    "author": "",
-    "license": "ISC",
+    "author": "souta-lab",
+    "license": "MIT",
     "dependencies": {
         "express": "^4.18.2",
         "react": "^18.2.0",
